@@ -44,6 +44,7 @@
 
 ### 2.1、 entry: "./app/entry", // string | object | array
 
+
 ### 2.2、output: // webpack 如何输出结果的相关选项
    path: path.resolve(__dirname, "dist"), // string
     // 所有输出文件的目标路径
@@ -51,16 +52,35 @@
 
     filename: "bundle.js", // string    // 「入口分块(entry chunk)」的文件名模板
 
-    publicPath: "/assets/", // string
+    publicPath: "/assets/", // string ？？
 
 ### 2.3、module
   由于webpack本身只能解析js文件所以要借用各种loader的配置来处理.css .vue .mp4 .png等文件（这里结合一个loader栗子🌰说明）
+
+  css-loader 将css文件解析成js文件  style-loader将解析好的css加载到style标签里面
+
+  loader的执行顺序是从右向左执行（测试css-loader style-loader）
+
+
+  postcss-loader autoprefixer 自动加样式前缀 按照策略选中是否加前缀
+
+
+  file-loader url-loader 处理图片，视频的loader （limit 设置大小是否存为base64 ）
+
+
 
 ### 2.3、resolve 解析
 
 ### 2.4、plugin 插件
 
 ### 2.5、devServer 运行时
+
+
+### 2.6、懒加载和chunks
+
+  import()
+
+  chuncks
 
 
 ## 3、vue-cli3 中的webpack配置
